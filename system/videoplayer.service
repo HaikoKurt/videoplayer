@@ -1,0 +1,10 @@
+[Unit]
+Description=VideoPlayer
+After=network.target
+
+[Service]
+Type=idle
+ExecStart=/home/pi/start.sh
+
+[Install]
+WantedBy=multi-user.target

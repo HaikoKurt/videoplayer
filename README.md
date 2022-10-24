@@ -21,4 +21,11 @@ Stand-alone Videoplayer mit Raspi
 
 ## Starte Video in einer Schleife
 
-    omxplayer --loop -o hdmi YORKAR.mp4
+    omxplayer --loop -o hdmi VIDEO.mp4
+
+## Erweiterungsmöglichkeiten
+
+-   Video-Darei von einem eingesteckten USB-Stick abspielen
+-   Mehrere Video-dateien in einer Schleife abspielen
+-   Fotos in einem Verzeichnis (auf dem USB-Stick) als Diashow abspielen
+-   Playlist von USB-Stick lesen und ausführen

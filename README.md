@@ -3,6 +3,7 @@
 Stand-alone Videoplayer mit Raspi
 
 ## Installation
+### Manuell
 
 1.  Raspian Lite 32-Bit installieren, **wichtig:** Buster (legacy version: 2022-09-22)
 1.  `sudo apt update`
@@ -14,11 +15,25 @@ Stand-alone Videoplayer mit Raspi
     1.  `sudo cp videoplayer.service /lib/systemd/system/`
     1.  `sudo systemctl enable videoplayer.service`
     1.  `sudo systemctl start videoplayer.service`
+1. USB-Mount installieren
+    1.  `sudo apt install usbmount`
+    1.  `sudo mkdir /etc/systemd/system/systemd-udevd.service.d`
+    1.  `sudo cp system/videoplayer-usbmount.conf /etc/systemd/system/systemd-udevd.service.d`
+    1.  `sudo systemctl daemon-reexec`
+    1.  `sudo service systemd-udevd restart`
 1.  `/boot/config.txt` für Ein-/Ausschalter anpassen
     1. `cd /boot`
     1. in `config.txt` als letzte Zeile einfügen: `dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up`
 1.  `sudo reboot`
 
+### Mit Instalationsskript
+
+1.  Raspian Lite 32-Bit installieren, **wichtig:** Buster (legacy version: 2022-09-22)
+1.  `sudo apt update`
+1.  Git instalieren `sudo apt install git`
+1.  Repository holen `git clone https://github.com/HaikoKurt/videoplayer`
+1.  In das Verzeichnis wechseln `cd videoplayer`
+1.  Installation starten `./install.sh`
 ## Starte Video in einer Schleife
 
     omxplayer --loop -o hdmi VIDEO.mp4

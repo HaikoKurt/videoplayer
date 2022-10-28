@@ -2,7 +2,7 @@
 
 # add configuration to boot config to start / stop with Pin3 to ground
 ADDCONFIG='dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up'
-FILE=config.txt
+FILE=/boot/config.txt
 if ! grep -q "$ADDCONFIG" "$FILE"; then
     sed -i.bak -e $'$ a\\\n\\n'"\\$ADDCONFIG" $FILE
 fi
@@ -17,7 +17,7 @@ sudo apt install usbmount -y
 
 # enable usbmount
 sudo mkdir /etc/systemd/system/systemd-udevd.service.d
-sudo cp system./videoplayer.usbmount.conf /etc/systemd/system/systemd-udevd.service.d
+sudo cp system/videoplayer-usbmount.conf /etc/systemd/system/systemd-udevd.service.d
 sudo systemctl daemon-reexec
 sudo service systemd-udevd restart
 

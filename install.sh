@@ -4,7 +4,7 @@
 ADDCONFIG='dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up'
 FILE=/boot/config.txt
 if ! grep -q "$ADDCONFIG" "$FILE"; then
-    sed -i.bak -e $'$ a\\\n\\n'"\\$ADDCONFIG" $FILE
+    sudo sed -i.bak -e $'$ a\\\n\\n'"\\$ADDCONFIG" $FILE
 fi
 
 # update system

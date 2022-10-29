@@ -12,8 +12,8 @@ Um das Video abzuspielen gibt es zwei Softwarepakete: `omxplayer` und `VLC`. Der
 
 Player | Vorteile | Nachteile
 ---|---|---
-`omxplayer` | <li>Läuft unter `root`<li>wenig Konfigurationsaufwand<li>sehr Ressourcenschonen, da ARM Hardwarebeschleunigung genutzt wiird<li>für die Nutzung auf der Kommandozeile gedacht | <li>für neuere Raspian-Versionen ungeeignet, da benutztes Interfache 'openvg' abgekündigt<li>letzter GIT-Commit im September 2019
-`VLC`| <li>läuft auch auf aktuellen Betriebssystemversionen<li>ständige Weiterentwicklung | <li>aufwändige Konfiguration in `/boot/config.txt`<li>ist eigentlich für Desktop-Nutzung gedacht<li>Einstellungen der Videopuffer notwendig, damit das Video ohne Unterbrechungen wiederholt wird<li>läuft nicht unter `root`-Rechten, deswegen für einen System-Service ungeeignet<li>Autostart nur über Desktop möglich
+`omxplayer` | <li>Läuft unter `root`</li><li>wenig Konfigurationsaufwand</li><li>sehr Ressourcenschonen, da ARM Hardwarebeschleunigung genutzt wiird</li><li>für die Nutzung auf der Kommandozeile gedacht</li> | <li>für neuere Raspian-Versionen ungeeignet, da benutztes Interfache 'openvg' abgekündigt</li><li>letzter GIT-Commit im September 2019</li>
+`VLC`| <li>läuft auch auf aktuellen Betriebssystemversionen</li><li>ständige Weiterentwicklung</li> | <li>aufwändige Konfiguration in `/boot/config.txt`</li><li>ist eigentlich für Desktop-Nutzung gedacht</li><li>Einstellungen der Videopuffer notwendig, damit das Video ohne Unterbrechungen wiederholt wird</li><li>läuft nicht unter `root`-Rechten, deswegen für einen System-Service ungeeignet</li><li>Autostart nur über Desktop möglich</li>
 
 Letztendlich habe ich mich für den `omxplayer`entschieden.
 
